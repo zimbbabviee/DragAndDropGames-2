@@ -11,6 +11,11 @@ TagManager:
   - masina
   - betonomeshalka
   - drugajamashina
+  - ekslavators
+  - e6
+  - policija
+  - traktors1
+  - Bomb
   layers:
   - Default
   - TransparentFX

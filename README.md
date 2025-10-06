@@ -7,3 +7,4 @@
 - [ ] Add necessary sounds and audio sources
 - [ ] Create logic for winning
 - [ ] Create camera script for zoom-in/out and camera restriction
+- [] Add flying obstacles with destroy effects

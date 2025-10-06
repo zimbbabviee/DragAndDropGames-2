@@ -47,27 +47,32 @@ public class DropPlaceScript : MonoBehaviour, IDropHandler
                     eventData.pointerDrag.GetComponent<RectTransform>().localScale =
                         GetComponent<RectTransform>().localScale;
 
+
                     switch (eventData.pointerDrag.tag)
                     {
                         case "Garbage":
                             objScript.effects.PlayOneShot(objScript.audioCli[2]);
                             break;
-
                         case "Medicine":
                             objScript.effects.PlayOneShot(objScript.audioCli[3]);
                             break;
-
                         case "Fire":
                             objScript.effects.PlayOneShot(objScript.audioCli[4]);
                             break;
-                        case "bus":
+                        case "drugajamaschina":
                             objScript.effects.PlayOneShot(objScript.audioCli[5]);
                             break;
-                        case "masina":
+                        case "ekskavators":
                             objScript.effects.PlayOneShot(objScript.audioCli[5]);
                             break;
-                        case "betonomeshalka":
-                            objScript.effects.PlayOneShot(objScript.audioCli[5]);
+                        case "e6":
+                            objScript.effects.PlayOneShot(objScript.audioCli[8]);
+                            break;
+                        case "policija":
+                            objScript.effects.PlayOneShot(objScript.audioCli[9]);
+                            break;
+                        case "traktorss1":
+                            objScript.effects.PlayOneShot(objScript.audioCli[10]);
                             break;
                         default:
                             Debug.Log("Unknown tag detected");
@@ -75,15 +80,14 @@ public class DropPlaceScript : MonoBehaviour, IDropHandler
                     }
                 }
 
-                }
-                else
-                {
+            }
+            else
+            {
                 objScript.rightPlace = false;
                 objScript.effects.PlayOneShot(objScript.audioCli[1]);
 
-
                 switch (eventData.pointerDrag.tag)
-                    {
+                {
                     case "Garbage":
                         objScript.vehicles[0].GetComponent<RectTransform>().localPosition =
                             objScript.startCoordinates[0];
@@ -93,30 +97,48 @@ public class DropPlaceScript : MonoBehaviour, IDropHandler
                         objScript.vehicles[1].GetComponent<RectTransform>().localPosition =
                            objScript.startCoordinates[1];
                         break;
-
                     case "Fire":
                         objScript.vehicles[2].GetComponent<RectTransform>().localPosition =
                            objScript.startCoordinates[2];
                         break;
                     case "bus":
-                            objScript.vehicles[0].GetComponent<RectTransform>().localPosition =
-                                objScript.startCoordinates[3];
-                            break;
-                    case "masina":
-                        objScript.vehicles[0].GetComponent<RectTransform>().localPosition =
-                            objScript.startCoordinates[4];
+                        objScript.vehicles[3].GetComponent<RectTransform>().localPosition =
+                           objScript.startCoordinates[3];
+                        break;
+                    case "mashina":
+                        objScript.vehicles[4].GetComponent<RectTransform>().localPosition =
+                           objScript.startCoordinates[4];
                         break;
                     case "betonomeshalka":
-                        objScript.vehicles[0].GetComponent<RectTransform>().localPosition =
-                            objScript.startCoordinates[5];
+                        objScript.vehicles[5].GetComponent<RectTransform>().localPosition =
+                           objScript.startCoordinates[5];
+                        break;
+                    case "drugajamaschina":
+                        objScript.vehicles[6].GetComponent<RectTransform>().localPosition =
+                           objScript.startCoordinates[6];
+                        break;
+                    case "ekskavators":
+                        objScript.vehicles[7].GetComponent<RectTransform>().localPosition =
+                           objScript.startCoordinates[7];
+                        break;
+                    case "e6":
+                        objScript.vehicles[8].GetComponent<RectTransform>().localPosition =
+                           objScript.startCoordinates[8];
+                        break;
+                    case "policija":
+                        objScript.vehicles[9].GetComponent<RectTransform>().localPosition =
+                           objScript.startCoordinates[9];
+                        break;
+                    case "traktorss1":
+                        objScript.vehicles[10].GetComponent<RectTransform>().localPosition =
+                           objScript.startCoordinates[10];
                         break;
                     default:
-                            Debug.Log("Unknown tag detected");
-                            break;
-
-                    }
+                        Debug.Log("Unknown tag detected");
+                        break;
                 }
             }
         }
     }
+}
 
