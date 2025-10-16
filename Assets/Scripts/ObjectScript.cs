@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 using System.Collections;
 using System.Collections.Generic;
+=======
+>>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
 using UnityEngine;
 
 public class ObjectScript : MonoBehaviour
@@ -12,6 +15,7 @@ public class ObjectScript : MonoBehaviour
     public AudioClip[] audioCli;
     [HideInInspector]
     public bool rightPlace = false;
+<<<<<<< HEAD
     public static GameObject lastDragged = null;
     public static bool drag = false;
 
@@ -28,3 +32,19 @@ public class ObjectScript : MonoBehaviour
         }
     }
 }
+=======
+    public GameObject lastDragged = null;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}
+>>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2

@@ -160,8 +160,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
+<<<<<<< HEAD
     nameFileIdTable:
       b2Vieta_0: 1077899176855823657
+=======
+    nameFileIdTable: {}
+>>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
