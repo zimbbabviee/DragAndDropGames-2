@@ -129,11 +129,8 @@ GameObject:
   m_Component:
   - component: {fileID: 133053278}
   - component: {fileID: 133053277}
-<<<<<<< HEAD
   - component: {fileID: 133053279}
   - component: {fileID: 133053280}
-=======
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
   m_Layer: 0
   m_Name: ScriptHolder
   m_TagString: Untagged
@@ -157,7 +154,6 @@ MonoBehaviour:
   - {fileID: 1160590684}
   - {fileID: 1894895411}
   - {fileID: 467877195}
-<<<<<<< HEAD
   - {fileID: 1235200741}
   - {fileID: 1745642289}
   - {fileID: 1612786461}
@@ -166,8 +162,6 @@ MonoBehaviour:
   - {fileID: 1494883715}
   - {fileID: 599610533}
   - {fileID: 1092984460}
-=======
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
   startCoordinates: []
   can: {fileID: 623804443}
   effects: {fileID: 448601657}
@@ -177,7 +171,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 83e0b4a64234d0647803a5163741df6e, type: 3}
   - {fileID: 8300000, guid: b211ce758ac4b1e4a9a6bc63e0b9b053, type: 3}
   - {fileID: 8300000, guid: 49f66a7dff6fd8b48acf99a46f9aa7b0, type: 3}
-<<<<<<< HEAD
   - {fileID: 8300000, guid: 906dce42b0095434c8b50167b8deb4c9, type: 3}
   - {fileID: 8300000, guid: 4b757a3d7c5a23c4880fec2ddad5d21b, type: 3}
   - {fileID: 8300000, guid: fe299960d5e7ef3429785b68bf3cb638, type: 3}
@@ -186,10 +179,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 911388e97cca4ac43882b97416d811a1, type: 3}
   - {fileID: 8300000, guid: fd83e2e9f3c27534f93003a58ec4684a, type: 3}
   rightPlace: 0
-=======
-  rightPlace: 0
   lastDragged: {fileID: 0}
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
 --- !u!4 &133053278
 Transform:
   m_ObjectHideFlags: 0
@@ -205,7 +195,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
 --- !u!114 &133053279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,8 +334,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objScript: {fileID: 133053277}
-=======
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
 --- !u!1 &287322652
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,10 +345,7 @@ GameObject:
   - component: {fileID: 287322653}
   - component: {fileID: 287322655}
   - component: {fileID: 287322654}
-<<<<<<< HEAD
   - component: {fileID: 287322656}
-=======
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
   m_Layer: 5
   m_Name: GarbageTruckPlace
   m_TagString: Garbage
@@ -383,17 +367,14 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 623804444}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 213.19159, y: 290.20462}
   m_SizeDelta: {x: 126.181854, y: 109.909195}
-=======
   m_AnchorMin: {x: 0.6976579, y: 0.38325155}
   m_AnchorMax: {x: 0.739, y: 0.5}
   m_AnchoredPosition: {x: -206, y: 355}
   m_SizeDelta: {x: 46.804962, y: -19.68158}
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &287322654
 MonoBehaviour:
@@ -433,7 +414,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 287322652}
   m_CullTransparentMesh: 1
-<<<<<<< HEAD
 --- !u!114 &287322656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -447,8 +427,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objScript: {fileID: 133053277}
-=======
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
 --- !u!1 &329993238
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,10 +438,7 @@ GameObject:
   - component: {fileID: 329993239}
   - component: {fileID: 329993241}
   - component: {fileID: 329993240}
-<<<<<<< HEAD
   - component: {fileID: 329993242}
-=======
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
   m_Layer: 5
   m_Name: FireTruckPlace
   m_TagString: Fire
@@ -528,7 +503,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 329993238}
   m_CullTransparentMesh: 1
-<<<<<<< HEAD
 --- !u!114 &329993242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -692,8 +666,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 364432632}
   m_CullTransparentMesh: 1
-=======
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
 --- !u!1 &448601656
 GameObject:
   m_ObjectHideFlags: 0
@@ -836,11 +808,8 @@ GameObject:
   - component: {fileID: 467877197}
   - component: {fileID: 467877200}
   - component: {fileID: 467877199}
-<<<<<<< HEAD
   - component: {fileID: 467877201}
   - component: {fileID: 467877202}
-=======
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
   m_Layer: 5
   m_Name: FireTruck
   m_TagString: Fire
@@ -864,11 +833,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
-  m_AnchoredPosition: {x: 213.19, y: -187.99}
-=======
   m_AnchoredPosition: {x: 385, y: -145}
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &467877197
@@ -922,10 +887,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectScr: {fileID: 133053277}
-<<<<<<< HEAD
   screenBou: {fileID: 133053279}
-=======
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
 --- !u!225 &467877200
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -938,7 +900,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
-<<<<<<< HEAD
 --- !u!114 &467877201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -964,8 +925,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5afc9fee765b774884bdd640701cd5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-=======
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -978,10 +937,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
-<<<<<<< HEAD
   - component: {fileID: 519420033}
-=======
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1107,7 +1063,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
 --- !u!114 &519420033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1343,8 +1298,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
-=======
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1506,11 +1459,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-<<<<<<< HEAD
-  m_AdditionalShaderChannelsFlag: 25
-=======
   m_AdditionalShaderChannelsFlag: 0
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -1534,7 +1483,6 @@ RectTransform:
   - {fileID: 1160590685}
   - {fileID: 1894895412}
   - {fileID: 467877196}
-<<<<<<< HEAD
   - {fileID: 1196363378}
   - {fileID: 1235200742}
   - {fileID: 546247723}
@@ -1553,13 +1501,10 @@ RectTransform:
   - {fileID: 1966773457}
   - {fileID: 1092984461}
   - {fileID: 364432633}
-=======
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-<<<<<<< HEAD
   m_AnchoredPosition: {x: -5.2432, y: 2.6215}
   m_SizeDelta: {x: 1920, y: 1110}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1741,11 +1686,9 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 874920402}
   m_CullTransparentMesh: 1
-=======
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1280, y: 1024}
   m_Pivot: {x: 0.5, y: 0.5}
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
 --- !u!1 &1064481911
 GameObject:
   m_ObjectHideFlags: 0
@@ -1875,7 +1818,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
 --- !u!1 &1092984460
 GameObject:
   m_ObjectHideFlags: 0
@@ -2006,8 +1948,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
-=======
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
 --- !u!1 &1114030361
 GameObject:
   m_ObjectHideFlags: 0
@@ -2019,10 +1959,7 @@ GameObject:
   - component: {fileID: 1114030362}
   - component: {fileID: 1114030364}
   - component: {fileID: 1114030363}
-<<<<<<< HEAD
   - component: {fileID: 1114030365}
-=======
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
   m_Layer: 5
   m_Name: Map
   m_TagString: Untagged
@@ -2087,7 +2024,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1114030361}
   m_CullTransparentMesh: 1
-<<<<<<< HEAD
 --- !u!114 &1114030365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2100,8 +2036,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2edb918b2ad6db1429e1bc8843e969ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-=======
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
 --- !u!1 &1160590684
 GameObject:
   m_ObjectHideFlags: 0
@@ -2115,10 +2049,7 @@ GameObject:
   - component: {fileID: 1160590686}
   - component: {fileID: 1160590689}
   - component: {fileID: 1160590688}
-<<<<<<< HEAD
   - component: {fileID: 1160590690}
-=======
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
   m_Layer: 5
   m_Name: GarbageTruck
   m_TagString: Garbage
@@ -2142,13 +2073,10 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
   m_AnchoredPosition: {x: 548.6837, y: -478.11398}
   m_SizeDelta: {x: 134.8193, y: 105.8032}
-=======
   m_AnchoredPosition: {x: 560, y: -480}
   m_SizeDelta: {x: 100, y: 100}
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1160590686
 MonoBehaviour:
@@ -2201,10 +2129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectScr: {fileID: 133053277}
-<<<<<<< HEAD
   screenBou: {fileID: 133053279}
-=======
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
 --- !u!225 &1160590689
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2217,7 +2142,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
-<<<<<<< HEAD
 --- !u!114 &1160590690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3063,8 +2987,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5afc9fee765b774884bdd640701cd5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-=======
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
 --- !u!1 &1876357250
 GameObject:
   m_ObjectHideFlags: 0
@@ -3076,10 +2998,7 @@ GameObject:
   - component: {fileID: 1876357251}
   - component: {fileID: 1876357253}
   - component: {fileID: 1876357252}
-<<<<<<< HEAD
   - component: {fileID: 1876357254}
-=======
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
   m_Layer: 5
   m_Name: AmbulancePlace
   m_TagString: Medicine
@@ -3144,7 +3063,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1876357250}
   m_CullTransparentMesh: 1
-<<<<<<< HEAD
 --- !u!114 &1876357254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3158,8 +3076,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objScript: {fileID: 133053277}
-=======
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
 --- !u!1 &1894895411
 GameObject:
   m_ObjectHideFlags: 0
@@ -3173,10 +3089,7 @@ GameObject:
   - component: {fileID: 1894895413}
   - component: {fileID: 1894895416}
   - component: {fileID: 1894895415}
-<<<<<<< HEAD
   - component: {fileID: 1894895417}
-=======
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
   m_Layer: 5
   m_Name: Medicine
   m_TagString: Medicine
@@ -3200,13 +3113,10 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
   m_AnchoredPosition: {x: -460.0293, y: 152.72}
   m_SizeDelta: {x: 114.202, y: 106.52}
-=======
   m_AnchoredPosition: {x: -465, y: 155}
   m_SizeDelta: {x: 100, y: 100}
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1894895413
 MonoBehaviour:
@@ -3259,10 +3169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectScr: {fileID: 133053277}
-<<<<<<< HEAD
   screenBou: {fileID: 133053279}
-=======
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
 --- !u!225 &1894895416
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -3275,7 +3182,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
-<<<<<<< HEAD
 --- !u!114 &1894895417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3631,8 +3537,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objScript: {fileID: 133053277}
-=======
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
 --- !u!1 &2090342968
 GameObject:
   m_ObjectHideFlags: 0

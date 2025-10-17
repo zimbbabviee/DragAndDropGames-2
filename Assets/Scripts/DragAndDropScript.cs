@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,41 +5,21 @@ using UnityEngine.EventSystems;
 
 public class DragAndDropScript : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
     IDragHandler, IEndDragHandler
-=======
-using UnityEngine;
-using UnityEngine.EventSystems;
-
-public class DragAndDropScript : MonoBehaviour, IPointerDownHandler, IDragHandler,
-   IBeginDragHandler, IEndDragHandler
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
 {
     private CanvasGroup canvasGro;
     private RectTransform rectTra;
     public ObjectScript objectScr;
-<<<<<<< HEAD
     public Screen_Boundaries screenBou;
 
-    // Start is called before the first frame update
-=======
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
     void Start()
     {
         canvasGro = GetComponent<CanvasGroup>();
         rectTra = GetComponent<RectTransform>();
     }
-
-<<<<<<< HEAD
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        if (Input.GetMouseButton(0) && !Input.GetMouseButton(1) && !Input.GetMouseButton(2))
-=======
-    // Update is called once per frame
+ 
     public void OnPointerDown(PointerEventData eventData)
     {
         if(Input.GetMouseButton(0) && !Input.GetMouseButton(1) && !Input.GetMouseButton(2))
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
         {
             Debug.Log("OnPointerDown");
             objectScr.effects.PlayOneShot(objectScr.audioCli[0]);
@@ -49,7 +28,6 @@ public class DragAndDropScript : MonoBehaviour, IPointerDownHandler, IDragHandle
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-<<<<<<< HEAD
         if (Input.GetMouseButton(0) && !Input.GetMouseButton(1) && !Input.GetMouseButton(2))
         {
             ObjectScript.drag = true;
@@ -71,14 +49,11 @@ public class DragAndDropScript : MonoBehaviour, IPointerDownHandler, IDragHandle
                     new Vector3(Input.mousePosition.x, Input.mousePosition.y,
                 screenBou.screenPoint.z));
         }
-=======
-
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-<<<<<<< HEAD
+
         if (Input.GetMouseButton(0) && !Input.GetMouseButton(1) && !Input.GetMouseButton(2))
         {
             Vector3 curSreenPoint =
@@ -86,14 +61,10 @@ public class DragAndDropScript : MonoBehaviour, IPointerDownHandler, IDragHandle
             Vector3 curPosition = Camera.main.ScreenToWorldPoint(curSreenPoint) + screenBou.offset;
             rectTra.position = screenBou.GetClampedPosition(curPosition);
         }
-=======
-
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-<<<<<<< HEAD
         if (Input.GetMouseButtonUp(0))
         {
             ObjectScript.drag = false;
@@ -113,9 +84,5 @@ public class DragAndDropScript : MonoBehaviour, IPointerDownHandler, IDragHandle
         }
     }
 }
-=======
 
-    }
 
-}
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2

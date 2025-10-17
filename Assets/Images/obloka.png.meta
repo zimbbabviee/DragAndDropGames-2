@@ -285,7 +285,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      obloka_0: 2104591105178700515
+      obloka_1: -9160151696998674058
+      obloka_2: 5618664656161306439
+      obloka_3: 3207586741472532660
+      obloka_4: -7390166287416672079
+      obloka_5: 3022248310412231055
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

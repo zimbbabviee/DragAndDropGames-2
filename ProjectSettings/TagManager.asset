@@ -3,22 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags:
-  - Garbage
-  - Medicine
-  - Fire
-<<<<<<< HEAD
-  - bus
-  - masina
-  - betonomeshalka
-  - drugajamashina
-  - ekslavators
-  - e6
-  - policija
-  - traktors1
-  - Bomb
-=======
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
+  tags: []
   layers:
   - Default
   - TransparentFX
