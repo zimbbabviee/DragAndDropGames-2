@@ -59,6 +59,9 @@ public class DropPlaceScript : MonoBehaviour, IDropHandler
                         case "Fire":
                             objScript.effects.PlayOneShot(objScript.audioCli[4]);
                             break;
+                        case "betonomeshalka":
+                            objScript.effects.PlayOneShot(objScript.audioCli[5]);
+                            break;
                         case "drugajamaschina":
                             objScript.effects.PlayOneShot(objScript.audioCli[5]);
                             break;
