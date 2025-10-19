@@ -7,6 +7,7 @@ public class DropPlaceScript : MonoBehaviour, IDropHandler
     private Vector3 placeSiz, vehicleSiz;
     private float xSizeDiff, ySizeDiff;
     public ObjectScript objScript;
+    private bool isOccupied = false;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -47,6 +48,16 @@ public class DropPlaceScript : MonoBehaviour, IDropHandler
                     eventData.pointerDrag.GetComponent<RectTransform>().localScale =
                         GetComponent<RectTransform>().localScale;
 
+                    if (!isOccupied)
+                    {
+                        isOccupied = true;
+
+                        GameManager gameManager = FindFirstObjectByType<GameManager>();
+                        if (gameManager != null)
+                        {
+                            gameManager.OnVehiclePlaced();
+                        }
+                    }
 
                     switch (eventData.pointerDrag.tag)
                     {
