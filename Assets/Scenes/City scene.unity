@@ -178,6 +178,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 17e53a0390d10de4c834e789cd14a889, type: 3}
   - {fileID: 8300000, guid: 911388e97cca4ac43882b97416d811a1, type: 3}
   - {fileID: 8300000, guid: fd83e2e9f3c27534f93003a58ec4684a, type: 3}
+  - {fileID: 8300000, guid: ec29aad22df0f3947b37bbcb0e17373b, type: 3}
+  - {fileID: 8300000, guid: 5d5ae4e68233af041b9fd5aebde27dd6, type: 3}
+  - {fileID: 8300000, guid: d8909dbb3a6ea8e4089d424daf27faf9, type: 3}
+  - {fileID: 8300000, guid: deb3c6344c4057b4f818207b9cbebcf0, type: 3}
   rightPlace: 0
 --- !u!4 &133053278
 Transform:
@@ -920,6 +924,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5afc9fee765b774884bdd640701cd5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minScale: 0.3
+  maxScale: 0.9
+  scaleSpeed: 0.005
+  rotationSpeed: 15
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1216,6 +1224,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5afc9fee765b774884bdd640701cd5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minScale: 0.3
+  maxScale: 0.9
+  scaleSpeed: 0.005
+  rotationSpeed: 15
 --- !u!114 &599610536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1496,12 +1508,13 @@ RectTransform:
   - {fileID: 1966773457}
   - {fileID: 1092984461}
   - {fileID: 364432633}
+  - {fileID: 1392825580}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -2, y: 4}
-  m_SizeDelta: {x: 2238.3618, y: 1024.9211}
+  m_AnchoredPosition: {x: -2.0001, y: 2.8384}
+  m_SizeDelta: {x: 2261.5942, y: 1022.5978}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &768119116
 GameObject:
@@ -1890,6 +1903,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5afc9fee765b774884bdd640701cd5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minScale: 0.3
+  maxScale: 0.9
+  scaleSpeed: 0.005
+  rotationSpeed: 15
 --- !u!114 &1092984465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2144,6 +2161,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5afc9fee765b774884bdd640701cd5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minScale: 0.3
+  maxScale: 0.9
+  scaleSpeed: 0.005
+  rotationSpeed: 15
 --- !u!1 &1196363377
 GameObject:
   m_ObjectHideFlags: 0
@@ -2363,6 +2384,92 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5afc9fee765b774884bdd640701cd5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minScale: 0.3
+  maxScale: 0.9
+  scaleSpeed: 0.005
+  rotationSpeed: 15
+--- !u!1 &1392825579
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1392825580}
+  - component: {fileID: 1392825581}
+  m_Layer: 5
+  m_Name: CarSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1392825580
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392825579}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 623804444}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1392825581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392825579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7593b8298828dd47af86c8ee1c6dc2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vehicles:
+  - {fileID: 1160590684}
+  - {fileID: 1894895411}
+  - {fileID: 467877195}
+  - {fileID: 1235200741}
+  - {fileID: 1745642289}
+  - {fileID: 1612786461}
+  - {fileID: 2084806128}
+  - {fileID: 1439355001}
+  - {fileID: 1494883715}
+  - {fileID: 599610533}
+  - {fileID: 1092984460}
+  dropPlaces:
+  - {fileID: 287322652}
+  - {fileID: 1876357250}
+  - {fileID: 329993238}
+  - {fileID: 1196363377}
+  - {fileID: 546247722}
+  - {fileID: 138466260}
+  - {fileID: 1602419003}
+  - {fileID: 768119116}
+  - {fileID: 874920402}
+  - {fileID: 2015857219}
+  - {fileID: 1966773456}
+  minDistanceBetweenVehicles: 100
+  minDistanceBetweenDropPlaces: 100
+  randomizeRotation: 0
+  randomizeScale: 1
+  minScale: 0.5
+  maxScale: 1.5
+  spawnMinX: -800
+  spawnMaxX: 800
+  spawnMinY: -450
+  spawnMaxY: 340
 --- !u!1 &1439355001
 GameObject:
   m_ObjectHideFlags: 0
@@ -2498,6 +2605,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5afc9fee765b774884bdd640701cd5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minScale: 0.3
+  maxScale: 0.9
+  scaleSpeed: 0.005
+  rotationSpeed: 15
 --- !u!1 &1494883715
 GameObject:
   m_ObjectHideFlags: 0
@@ -2565,6 +2676,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5afc9fee765b774884bdd640701cd5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minScale: 0.3
+  maxScale: 0.9
+  scaleSpeed: 0.005
+  rotationSpeed: 15
 --- !u!114 &1494883719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2847,6 +2962,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5afc9fee765b774884bdd640701cd5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minScale: 0.3
+  maxScale: 0.9
+  scaleSpeed: 0.005
+  rotationSpeed: 15
 --- !u!1 &1745642289
 GameObject:
   m_ObjectHideFlags: 0
@@ -2977,6 +3096,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5afc9fee765b774884bdd640701cd5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minScale: 0.3
+  maxScale: 0.9
+  scaleSpeed: 0.005
+  rotationSpeed: 15
 --- !u!1 &1876357250
 GameObject:
   m_ObjectHideFlags: 0
@@ -3182,6 +3305,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5afc9fee765b774884bdd640701cd5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minScale: 0.3
+  maxScale: 0.9
+  scaleSpeed: 0.005
+  rotationSpeed: 15
 --- !u!1 &1966773456
 GameObject:
   m_ObjectHideFlags: 0
@@ -3512,6 +3639,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5afc9fee765b774884bdd640701cd5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minScale: 0.3
+  maxScale: 0.9
+  scaleSpeed: 0.005
+  rotationSpeed: 15
 --- !u!114 &2084806135
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -28,4 +28,21 @@ public class ObjectScript : MonoBehaviour
         }
     }
 
+    public void UpdateStartCoordinates()
+    {
+        if (startCoordinates == null || startCoordinates.Length != vehicles.Length)
+        {
+            startCoordinates = new Vector2[vehicles.Length];
+        }
+
+        for (int i = 0; i < vehicles.Length; i++)
+        {
+            if (vehicles[i] != null)
+            {
+                startCoordinates[i] = vehicles[i].GetComponent<RectTransform>().localPosition;
+                Debug.Log($"Updated start coordinates for {vehicles[i].name}: {startCoordinates[i]}");
+            }
+        }
+    }
+
 }

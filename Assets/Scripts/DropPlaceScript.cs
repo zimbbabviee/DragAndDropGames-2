@@ -59,22 +59,28 @@ public class DropPlaceScript : MonoBehaviour, IDropHandler
                         case "Fire":
                             objScript.effects.PlayOneShot(objScript.audioCli[4]);
                             break;
+                        case "bus":
+                            objScript.effects.PlayOneShot(objScript.audioCli[6]);
+                            break;
+                        case "masina":
+                            objScript.effects.PlayOneShot(objScript.audioCli[13]);
+                            break;
                         case "betonomeshalka":
-                            objScript.effects.PlayOneShot(objScript.audioCli[5]);
+                            objScript.effects.PlayOneShot(objScript.audioCli[7]);
                             break;
-                        case "drugajamaschina":
-                            objScript.effects.PlayOneShot(objScript.audioCli[5]);
+                        case "drugajamashina":
+                            objScript.effects.PlayOneShot(objScript.audioCli[14]);
                             break;
-                        case "ekskavators":
-                            objScript.effects.PlayOneShot(objScript.audioCli[5]);
+                        case "ekslavators":
+                            objScript.effects.PlayOneShot(objScript.audioCli[12]);
                             break;
                         case "e6":
-                            objScript.effects.PlayOneShot(objScript.audioCli[8]);
+                            objScript.effects.PlayOneShot(objScript.audioCli[13]);
                             break;
                         case "policija":
                             objScript.effects.PlayOneShot(objScript.audioCli[9]);
                             break;
-                        case "traktorss1":
+                        case "traktors1":
                             objScript.effects.PlayOneShot(objScript.audioCli[10]);
                             break;
                         default:
@@ -108,7 +114,7 @@ public class DropPlaceScript : MonoBehaviour, IDropHandler
                         objScript.vehicles[3].GetComponent<RectTransform>().localPosition =
                            objScript.startCoordinates[3];
                         break;
-                    case "mashina":
+                    case "masina":
                         objScript.vehicles[4].GetComponent<RectTransform>().localPosition =
                            objScript.startCoordinates[4];
                         break;
@@ -116,11 +122,11 @@ public class DropPlaceScript : MonoBehaviour, IDropHandler
                         objScript.vehicles[5].GetComponent<RectTransform>().localPosition =
                            objScript.startCoordinates[5];
                         break;
-                    case "drugajamaschina":
+                    case "drugajamashina":
                         objScript.vehicles[6].GetComponent<RectTransform>().localPosition =
                            objScript.startCoordinates[6];
                         break;
-                    case "ekskavators":
+                    case "ekslavators":
                         objScript.vehicles[7].GetComponent<RectTransform>().localPosition =
                            objScript.startCoordinates[7];
                         break;
@@ -132,7 +138,7 @@ public class DropPlaceScript : MonoBehaviour, IDropHandler
                         objScript.vehicles[9].GetComponent<RectTransform>().localPosition =
                            objScript.startCoordinates[9];
                         break;
-                    case "traktorss1":
+                    case "traktors1":
                         objScript.vehicles[10].GetComponent<RectTransform>().localPosition =
                            objScript.startCoordinates[10];
                         break;
