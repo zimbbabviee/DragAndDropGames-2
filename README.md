@@ -1,14 +1,15 @@
-- [ ] Create the necessary folders
-- [ ] Add necessary assets
-- [ ] Add cars on the map
-- [ ] Create C# script for Drag And Drop
-- [ ] Create C# script for transformation
-- [ ] Create C# script for object fixation
-- [ ] Add necessary sounds and audio sources
-- [ ] Create logic for winning
-- [ ] Create camera script for zoom-in/out and camera restriction
-<<<<<<< HEAD
-- [] Add flying obstacles with destroy effects
-=======
-- [ ] Create main screen
->>>>>>> 45429f9bcd19d08c2d33868a5526b477a3dd2ff2
+- [x] Create the necessary folders
+- [x] Add necessary assets
+- [x] Add cars on the map
+- [x] Create C# script for Drag And Drop
+- [x] Create C# script for transformation
+- [x] Create C# script for object fixation
+- [x] Add necessary sounds and audio sources
+- [x] Create logic for winning
+- [x] Create camera script for zoom-in/out and camera restriction
+- [x] Add flying obstacles with destroy effects
+- [x] Create main screen
+
+Ļoti aizraujoša spēle, kas attīsta atmiņu un acu mērīšanas prasmi.
+Šajā spēlē jums būs jāiejūtas automašīnu izvietotāja lomā. Spēlē ir paaugstināti grūtības līmeņi, kad parādās automašīnas ar nejaušu pagrieziena leņķi un izmēru.
+Spēle beidzas pēc visu automašīnu novietošanas. Pēc spēles beigām spēlētājam tiek piešķirtas no 1 līdz 3 zvaigznēm,  atkarībā no laika, kas pavadīts šī līmeņa iziešanai.

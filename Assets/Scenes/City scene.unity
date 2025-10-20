@@ -172,9 +172,9 @@ MonoBehaviour:
   twoStarsSprite: {fileID: 4717561126780394411, guid: 01d7096cf642d4c4e9e200d82b4c2196, type: 3}
   threeStarsSprite: {fileID: -5985649082479903091, guid: 5f483a1df79d9274581dc80b8477806f, type: 3}
   timeText: {fileID: 1219184570}
-  threeStarTime: 60
-  twoStarTime: 120
-  oneStarTime: 180
+  threeStarTime: 180
+  twoStarTime: 240
+  oneStarTime: 300
   menuSceneIndex: 0
 --- !u!1 &130329781
 GameObject:
@@ -1314,8 +1314,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minScale: 0.3
   maxScale: 0.9
-  scaleSpeed: 0.005
-  rotationSpeed: 15
+  scaleSpeed: 0.003
+  rotationSpeed: 10
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1614,8 +1614,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minScale: 0.3
   maxScale: 0.9
-  scaleSpeed: 0.005
-  rotationSpeed: 15
+  scaleSpeed: 0.003
+  rotationSpeed: 10
 --- !u!114 &599610536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2374,8 +2374,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minScale: 0.3
   maxScale: 0.9
-  scaleSpeed: 0.005
-  rotationSpeed: 15
+  scaleSpeed: 0.003
+  rotationSpeed: 10
 --- !u!114 &1092984465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2632,8 +2632,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minScale: 0.3
   maxScale: 0.9
-  scaleSpeed: 0.005
-  rotationSpeed: 15
+  scaleSpeed: 0.003
+  rotationSpeed: 10
 --- !u!1 &1196363377
 GameObject:
   m_ObjectHideFlags: 0
@@ -2991,8 +2991,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minScale: 0.3
   maxScale: 0.9
-  scaleSpeed: 0.005
-  rotationSpeed: 15
+  scaleSpeed: 0.003
+  rotationSpeed: 10
 --- !u!1 &1367983239
 GameObject:
   m_ObjectHideFlags: 0
@@ -3200,9 +3200,9 @@ MonoBehaviour:
   minDistanceBetweenVehicles: 100
   minDistanceBetweenDropPlaces: 100
   randomizeRotation: 0
-  randomizeScale: 0
-  minScale: 0.5
-  maxScale: 1.5
+  randomizeScale: 1
+  minScale: 0.3
+  maxScale: 0.9
   spawnMinX: -800
   spawnMaxX: 800
   spawnMinY: -450
@@ -3344,8 +3344,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minScale: 0.3
   maxScale: 0.9
-  scaleSpeed: 0.005
-  rotationSpeed: 15
+  scaleSpeed: 0.003
+  rotationSpeed: 10
 --- !u!1 &1494883715
 GameObject:
   m_ObjectHideFlags: 0
@@ -3415,8 +3415,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minScale: 0.3
   maxScale: 0.9
-  scaleSpeed: 0.005
-  rotationSpeed: 15
+  scaleSpeed: 0.003
+  rotationSpeed: 10
 --- !u!114 &1494883719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3701,8 +3701,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minScale: 0.3
   maxScale: 0.9
-  scaleSpeed: 0.005
-  rotationSpeed: 15
+  scaleSpeed: 0.003
+  rotationSpeed: 10
 --- !u!1 &1745642289
 GameObject:
   m_ObjectHideFlags: 0
@@ -3835,8 +3835,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minScale: 0.3
   maxScale: 0.9
-  scaleSpeed: 0.005
-  rotationSpeed: 15
+  scaleSpeed: 0.003
+  rotationSpeed: 10
 --- !u!1 &1876357250
 GameObject:
   m_ObjectHideFlags: 0
@@ -4044,8 +4044,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minScale: 0.3
   maxScale: 0.9
-  scaleSpeed: 0.005
-  rotationSpeed: 15
+  scaleSpeed: 0.003
+  rotationSpeed: 10
 --- !u!1 &1966773456
 GameObject:
   m_ObjectHideFlags: 0
@@ -4378,8 +4378,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minScale: 0.3
   maxScale: 0.9
-  scaleSpeed: 0.005
-  rotationSpeed: 15
+  scaleSpeed: 0.003
+  rotationSpeed: 10
 --- !u!114 &2084806135
 MonoBehaviour:
   m_ObjectHideFlags: 0
