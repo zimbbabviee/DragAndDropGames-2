@@ -3,7 +3,19 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - betonomeshalka
+  - Garbage
+  - Fire
+  - masina
+  - policija
+  - ekslavators
+  - e6
+  - traktors1
+  - bus
+  - drugajamashina
+  - Medicine
+  - Bomb
   layers:
   - Default
   - TransparentFX
@@ -11,7 +23,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - objekti
   - 
   - 
   - 

@@ -57,6 +57,18 @@ public class GameManager : MonoBehaviour
 
         gameCompleted = true;
 
+        PlainObjectSpawnScript plainObjectSpawner = FindFirstObjectByType<PlainObjectSpawnScript>();
+        if (plainObjectSpawner != null)
+        {
+            plainObjectSpawner.StopSpawning();
+        }
+
+        FlyingObjectsControllerScript[] flyingObjects = FindObjectsByType<FlyingObjectsControllerScript>(FindObjectsSortMode.None);
+        foreach (FlyingObjectsControllerScript flyingObj in flyingObjects)
+        {
+            flyingObj.StopMoving();
+        }
+
         if (timerScript != null)
         {
             float elapsedTime = timerScript.GetElapsedTime();

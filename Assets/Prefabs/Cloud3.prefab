@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5888819974142137955}
   - component: {fileID: 1879265167913878392}
   - component: {fileID: 6953284391128141134}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Cloud3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

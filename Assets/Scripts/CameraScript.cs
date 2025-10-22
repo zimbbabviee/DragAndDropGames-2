@@ -10,9 +10,15 @@ public class CameraScript : MonoBehaviour
     float cameraMaxX, cameraMinX, cameraMaxY, cameraMinY, x, y;
     public Camera cam;
 
+    private float defaultOrthographicSize;
+    private Vector3 defaultPosition;
+
     void Start()
     {
         cam = GetComponent<Camera>();
+        defaultOrthographicSize = cam.orthographicSize;
+        defaultPosition = transform.position;
+
         topRight = cam.ScreenToWorldPoint(
             new Vector3(cam.pixelWidth, cam.pixelHeight, -transform.position.z));
         bottomLeft = cam.ScreenToWorldPoint(new Vector3(0, 0, -transform.position.z));
@@ -25,6 +31,12 @@ public class CameraScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            ResetCamera();
+            return;
+        }
+
         x = Input.GetAxis("Mouse X") * panSpeed;
         y = Input.GetAxis("Mouse Y") * panSpeed;
         transform.Translate(x, y, 0);
@@ -34,9 +46,21 @@ public class CameraScript : MonoBehaviour
             cam.orthographicSize = cam.orthographicSize - 50f;
         }
 
-        if ((Input.GetAxis("Mouse ScrollWheel") < 0) && cam.orthographicSize < maxZoom)
+        if ((Input.GetAxis("Mouse ScrollWheel") < 0))
         {
-            cam.orthographicSize = cam.orthographicSize + 50f;
+            if (cam.orthographicSize < defaultOrthographicSize)
+            {
+                cam.orthographicSize = Mathf.Min(cam.orthographicSize + 50f, defaultOrthographicSize);
+
+                if (cam.orthographicSize >= defaultOrthographicSize)
+                {
+                    ResetCamera();
+                }
+            }
+            else if (cam.orthographicSize < maxZoom)
+            {
+                cam.orthographicSize = cam.orthographicSize + 50f;
+            }
         }
 
         topRight = cam.ScreenToWorldPoint(
@@ -66,5 +90,11 @@ public class CameraScript : MonoBehaviour
             transform.position = new Vector3(
              transform.position.x, transform.position.y + (cameraMinY - bottomLeft.y), transform.position.z);
         }
+    }
+
+    void ResetCamera()
+    {
+        cam.orthographicSize = defaultOrthographicSize;
+        transform.position = defaultPosition;
     }
 }

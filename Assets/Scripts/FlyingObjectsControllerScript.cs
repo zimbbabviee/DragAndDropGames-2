@@ -18,6 +18,7 @@ public class FlyingObjectsControllerScript : MonoBehaviour
     private bool isExploading = false;
     private Image image;
     private Color originalColor;
+    private bool isActive = true;
 
     void Start()
     {
@@ -36,9 +37,17 @@ public class FlyingObjectsControllerScript : MonoBehaviour
         StartCoroutine(FadeIn());
     }
 
+    public void StopMoving()
+    {
+        isActive = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if (!isActive)
+            return;
+
         float waveOffset = Mathf.Sin(Time.time * waveFrequency) * waveAmplitude;
         rectTransform.anchoredPosition += new Vector2(-speed * Time.deltaTime, waveOffset * Time.deltaTime);
         // <-
@@ -69,6 +78,12 @@ public class FlyingObjectsControllerScript : MonoBehaviour
 
             if (ObjectScript.lastDragged != null)
             {
+                ZaudejumsScript zaudejumsScript = FindFirstObjectByType<ZaudejumsScript>();
+                if (zaudejumsScript != null)
+                {
+                    zaudejumsScript.ShowGameOver();
+                }
+
                 StartCoroutine(ShrinkAndDestroy(ObjectScript.lastDragged, 0.5f));
                 ObjectScript.lastDragged = null;
                 ObjectScript.drag = false;
@@ -84,10 +99,12 @@ public class FlyingObjectsControllerScript : MonoBehaviour
         isExploading = true;
         objectScript.effects.PlayOneShot(objectScript.audioCli[11], 5f);
 
-        if(TryGetComponent<Animator>(out Animator animator))
+        Animator animator = GetComponentInChildren<Animator>();
+        if(animator != null)
         {
-            animator.SetBool("explode", true);
+            animator.SetTrigger("explode");
         }
+
         image.color = Color.red;
         StartCoroutine(RecoverColor(0.4f));
 
