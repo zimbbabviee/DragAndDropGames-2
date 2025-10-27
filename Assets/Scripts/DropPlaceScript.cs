@@ -11,11 +11,18 @@ public class DropPlaceScript : MonoBehaviour, IDropHandler
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        if(objScript == null)
+        {
+            objScript = Object.FindFirstObjectByType<ObjectScript>();
+        }
+    } 
     public void OnDrop(PointerEventData eventData)
     {
-        if ((eventData.pointerDrag != null) &&
-            Input.GetMouseButtonUp(0) && !Input.GetMouseButton(1) && !Input.GetMouseButton(2))
-        {
+        if (eventData.pointerDrag == null)
+            return;
+        
             if (eventData.pointerDrag.tag.Equals(tag))
             {
                 placeZRot =
@@ -98,7 +105,6 @@ public class DropPlaceScript : MonoBehaviour, IDropHandler
                             Debug.Log("Unknown tag detected");
                             break;
                     }
-                }
 
             }
             else
