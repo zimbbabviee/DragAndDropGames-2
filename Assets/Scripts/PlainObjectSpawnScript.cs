@@ -1,5 +1,6 @@
 using UnityEngine;
 
+//CHANGES NOT NEEDED FOR ANDROID
 public class PlainObjectSpawnScript : MonoBehaviour
 {
     Screen_Boundaries screenBoundriesScript;

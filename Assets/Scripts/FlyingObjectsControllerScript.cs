@@ -1,8 +1,8 @@
-
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
+// CHANGES FOR ANDROID
 public class FlyingObjectsControllerScript : MonoBehaviour
 {
     [HideInInspector]
@@ -64,19 +64,26 @@ public class FlyingObjectsControllerScript : MonoBehaviour
             isFadingOut = true;
         }
 
-        if(CompareTag("Bomb") && !isExploading && RectTransformUtility.RectangleContainsScreenPoint(
-            rectTransform, Input.mousePosition, Camera.main))
+        // Ja neko nevelk un kursors pieskaras bumbai
+        Vector2 inputPosition;
+        if(!TryGetInputPosition(out inputPosition))
+            return;
+
+
+        if (CompareTag("Bomb") && !isExploading &&
+            RectTransformUtility.RectangleContainsScreenPoint(
+                rectTransform, inputPosition, Camera.main))
         {
-            Debug.Log("The cursor collided with a bomb!(without car)");
+            Debug.Log("Bomb hit by cursor (without dragging)");
             TriggerExplosion();
         }
 
-        if (ObjectScript.drag && !isFadingOut &&
-            RectTransformUtility.RectangleContainsScreenPoint(rectTransform, Input.mousePosition, Camera.main))
+        if(ObjectScript.drag && !isFadingOut &&
+            RectTransformUtility.RectangleContainsScreenPoint(
+                rectTransform, inputPosition, Camera.main))
         {
-            Debug.Log("The cursor collided with a flying object!");
-
-            if (ObjectScript.lastDragged != null)
+            Debug.Log("Obstacle hit by drag");
+           if(ObjectScript.lastDragged != null)
             {
                 ZaudejumsScript zaudejumsScript = FindFirstObjectByType<ZaudejumsScript>();
                 if (zaudejumsScript != null)
@@ -90,8 +97,29 @@ public class FlyingObjectsControllerScript : MonoBehaviour
             }
 
             StartToDestroy();
-
         }
+    }
+
+    bool TryGetInputPosition(out Vector2 position)
+    {
+#if UNITY_ANDROID && !UNITY_EDITOR
+        if(Input.touchCount > 0)
+        {
+            position = Input.GetTouch(0).position;
+            return true;
+        }
+        else
+        {
+            position = Vector2.zero;
+            return false;
+        }
+#else
+        // Desktop/Editor - используем позицию мыши
+        position = Input.mousePosition;
+        // Возвращаем true только если мышь в пределах экрана
+        return position.x >= 0 && position.x <= Screen.width &&
+               position.y >= 0 && position.y <= Screen.height;
+#endif
     }
 
     public void TriggerExplosion()
@@ -158,6 +186,10 @@ public class FlyingObjectsControllerScript : MonoBehaviour
     }
     IEnumerator Vibrate()
     {
+#if UNITY_ANDROID
+        Handheld.Vibrate();
+#endif
+
         Vector2 originalPosition = rectTransform.anchoredPosition;
         float duration = 0.3f;
         float elpased = 0f;
