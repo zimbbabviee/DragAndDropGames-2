@@ -54,10 +54,10 @@ public class CameraScript : MonoBehaviour
             cam.orthographicSize -= scroll * mouseZoomSpeed;
 #else
         HandleTouch();
-#endif
 
         if (Input.touchCount == 2)
             HandlePinch();
+#endif
 
         cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, minZoom, maxZoom);
         screenBoundries.RecalculateBounds();
@@ -69,6 +69,9 @@ public class CameraScript : MonoBehaviour
         Vector3 mouse = Input.mousePosition;
 
         if (mouse.x < 0 || mouse.x > Screen.width || mouse.y < 0 || mouse.y > Screen.height)
+            return;
+
+        if (IsTouchingUIButton(mouse))
             return;
 
         Vector3 screenPoint = new Vector3(mouse.x, mouse.y, cam.nearClipPlane);
@@ -114,9 +117,11 @@ public class CameraScript : MonoBehaviour
             t.fingerId == panFingerId)
         {
             Vector2 delta = t.position - lastTouchPos;
-            transform.Translate(ScreenDeltaToWorldDelta(delta) * touchPanSpeed, Space.World);
-            lastTouchPos = t.position;
+            Vector3 worldDelta = ScreenDeltaToWorldDelta(delta);
 
+            transform.position += new Vector3(-worldDelta.x * touchPanSpeed, -worldDelta.y * touchPanSpeed, 0);
+
+            lastTouchPos = t.position;
         }
         else if (t.phase == TouchPhase.Ended || t.phase == TouchPhase.Canceled)
         {
@@ -127,6 +132,9 @@ public class CameraScript : MonoBehaviour
 
     bool IsTouchingUIButton(Vector2 touchPos)
     {
+        if (EventSystem.current == null)
+            return false;
+
         PointerEventData pointerData = new PointerEventData(EventSystem.current);
         pointerData.position = touchPos;
 
@@ -135,10 +143,11 @@ public class CameraScript : MonoBehaviour
 
         foreach (RaycastResult result in results)
         {
+            if (result.gameObject.GetComponent<DragAndDropScript>() != null)
+                continue;
+
             if (result.gameObject.GetComponent<UnityEngine.UI.Button>() != null)
-            {
                 return true;
-            }
         }
 
         return false;

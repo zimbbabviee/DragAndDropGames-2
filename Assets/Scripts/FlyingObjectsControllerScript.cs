@@ -114,9 +114,7 @@ public class FlyingObjectsControllerScript : MonoBehaviour
             return false;
         }
 #else
-        // Desktop/Editor - используем позицию мыши
         position = Input.mousePosition;
-        // Возвращаем true только если мышь в пределах экрана
         return position.x >= 0 && position.x <= Screen.width &&
                position.y >= 0 && position.y <= Screen.height;
 #endif
