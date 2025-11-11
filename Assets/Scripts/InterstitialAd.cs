@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class InterstitialAd : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
 {
-    [SerializeField] string _androidAdUnitId = "Interstitial_Android";
+    [SerializeField] string _androidAdUnitId = "Rewarded_Android";
     string _adUnitId;
 
     public event Action OnInterstitialAdReady;
