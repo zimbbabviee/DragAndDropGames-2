@@ -16,8 +16,9 @@ TagManager:
   - drugajamashina
   - Medicine
   - Bomb
-  - interstitialButton
   - interstitialAdButton
+  - RewardedButton
+  - BannerButton
   layers:
   - Default
   - TransparentFX

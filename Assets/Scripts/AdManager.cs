@@ -10,19 +10,20 @@ public class AdManager : MonoBehaviour
     private bool firstAdShown = false;
 
     public RewardedAds rewardedAds;
-    [SerializeField] bool turnOffRewardedAds = false; 
+    [SerializeField] bool turnOffRewardedAds = false;
 
-    // .......
+    public BannerAd bannerAd;
+    [SerializeField] bool turnOffBannerAd = false;
 
     public static AdManager Instance { get; private set; }
 
 
     private void Awake()
     {
-        if(adsInitializer == null)
+        if (adsInitializer == null)
             adsInitializer = FindFirstObjectByType<AdsInitializer>();
 
-        if(Instance != null && Instance != this)
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
             return;
@@ -37,7 +38,7 @@ public class AdManager : MonoBehaviour
 
     private void HandleAdsInitialized()
     {
-        if(!turnOffInterstitialAd)
+        if (!turnOffInterstitialAd)
         {
             interstitialAd.OnInterstitialAdReady += HandleInterstitialReady;
             interstitialAd.LoadAd();
@@ -46,6 +47,11 @@ public class AdManager : MonoBehaviour
         if (!turnOffRewardedAds)
         {
             rewardedAds.LoadAd();
+        }
+
+        if (!turnOffBannerAd)
+        {
+            bannerAd.LoadBanner();
         }
     }
 
@@ -57,7 +63,8 @@ public class AdManager : MonoBehaviour
             interstitialAd.ShowAd();
             firstAdShown = true;
 
-        } else
+        }
+        else
         {
             Debug.Log("Next interstitial ad is ready for manual show!");
         }
@@ -91,12 +98,21 @@ public class AdManager : MonoBehaviour
         if (rewardedAds == null)
             rewardedAds = FindFirstObjectByType<RewardedAds>();
 
+        if (bannerAd == null)
+            bannerAd = FindFirstObjectByType<BannerAd>();
+
         Button rewardedAdButton =
             GameObject.FindGameObjectWithTag("RewardedButton").GetComponent<Button>();
 
         if (rewardedAds != null && rewardedAdButton != null)
             rewardedAds.SetButton(rewardedAdButton);
 
+
+        Button bannerButton = GameObject.FindGameObjectWithTag("BannerButton").GetComponent<Button>();
+        if (bannerAd != null && bannerButton != null)
+        {
+            bannerAd.SetButton(bannerButton);
+        }
 
         if (!firstSceneLoad)
         {
