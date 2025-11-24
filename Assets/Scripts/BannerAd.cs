@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class BannerAd : MonoBehaviour
 {
     [SerializeField] string _androidAdUnitId = "Banner_Android";
+    [SerializeField] string _iOSAdUnitId = "Banner_iOS";
     string _adUnitId;
 
     [SerializeField] Button _bannerButton;
@@ -14,7 +15,13 @@ public class BannerAd : MonoBehaviour
 
     private void Awake()
     {
+#if UNITY_IOS
+        _adUnitId = _iOSAdUnitId;
+#elif UNITY_ANDROID
         _adUnitId = _androidAdUnitId;
+#else
+        _adUnitId = _androidAdUnitId;
+#endif
         Advertisement.Banner.SetPosition(_bannerPosition);
     }
 

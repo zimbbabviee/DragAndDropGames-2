@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
 {
     [SerializeField] string _androidAdUnitId = "Rewarded_Android";
+    [SerializeField] string _iOSAdUnitId = "Rewarded_iOS";
     string _adUnitId;
 
     [SerializeField] Button _rewardedAdButton;
@@ -14,7 +15,13 @@ public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLi
 
     private void Awake()
     {
+#if UNITY_IOS
+        _adUnitId = _iOSAdUnitId;
+#elif UNITY_ANDROID
         _adUnitId = _androidAdUnitId;
+#else
+        _adUnitId = _androidAdUnitId;
+#endif
 
         if (flayingObjectManager == null)
             flayingObjectManager = FindFirstObjectByType<FlayingObjectManager>();

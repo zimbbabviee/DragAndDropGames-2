@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class InterstitialAd : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
 {
-    [SerializeField] string _androidAdUnitId = "Rewarded_Android";
+    [SerializeField] string _androidAdUnitId = "Interstitial_Android";
+    [SerializeField] string _iOSAdUnitId = "Interstitial_iOS";
     string _adUnitId;
 
     public event Action OnInterstitialAdReady;
@@ -15,7 +16,13 @@ public class InterstitialAd : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSho
 
     void Awake()
     {
+#if UNITY_IOS
+        _adUnitId = _iOSAdUnitId;
+#elif UNITY_ANDROID
         _adUnitId = _androidAdUnitId;
+#else
+        _adUnitId = _androidAdUnitId;
+#endif
     }
 
     private void Update()
@@ -97,10 +104,11 @@ public class InterstitialAd : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSho
 
     public void OnUnityAdsShowComplete(string placementId, UnityAdsShowCompletionState showCompletionState)
     {
+        Time.timeScale = 1.0f;
+
         if (showCompletionState == UnityAdsShowCompletionState.COMPLETED)
         {
             Debug.Log("Interstitial ad watched completely!");
-            StartCoroutine(SlowDownTimeTemporarily(30f));
             LoadAd();
 
         }
@@ -125,6 +133,7 @@ public class InterstitialAd : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSho
     public void OnUnityAdsShowFailure(string placementId, UnityAdsShowError error, string message)
     {
         Debug.Log("Error showing interstitial ad!");
+        Time.timeScale = 1.0f;
         LoadAd();
     }
 

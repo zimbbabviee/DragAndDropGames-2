@@ -141,5 +141,17 @@ public class AdManager : MonoBehaviour
             interstitialAd.LoadAd();
         }
 
+        if (!turnOffRewardedAds && rewardedAds != null)
+        {
+            Debug.Log("Loading rewarded ad on scene load...");
+            rewardedAds.LoadAd();
+        }
+
+        if (!turnOffBannerAd && bannerAd != null)
+        {
+            Debug.Log("Loading banner ad on scene load...");
+            bannerAd.LoadBanner();
+        }
+
     }
 }
