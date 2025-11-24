@@ -80,4 +80,15 @@ public class HanoiGameManager : MonoBehaviour
     {
         return moveCount;
     }
+
+    public void ReduceMoves(int amount)
+    {
+        moveCount -= amount;
+        if (moveCount < 0)
+        {
+            moveCount = 0;
+        }
+        UpdateCounterDisplay();
+        Debug.Log($"Reduced moves by {amount}. Current moves: {moveCount}");
+    }
 }

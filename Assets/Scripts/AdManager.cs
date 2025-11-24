@@ -10,6 +10,7 @@ public class AdManager : MonoBehaviour
     private bool firstAdShown = false;
 
     public RewardedAds rewardedAds;
+    public HanoiRewardedAds hanoiRewardedAds;
     [SerializeField] bool turnOffRewardedAds = false;
 
     public BannerAd bannerAd;
@@ -47,6 +48,11 @@ public class AdManager : MonoBehaviour
         if (!turnOffRewardedAds && rewardedAds != null)
         {
             rewardedAds.LoadAd();
+        }
+
+        if (!turnOffRewardedAds && hanoiRewardedAds != null)
+        {
+            hanoiRewardedAds.LoadAd();
         }
 
         if (!turnOffBannerAd && bannerAd != null)
@@ -100,15 +106,27 @@ public class AdManager : MonoBehaviour
         if (rewardedAds == null)
             rewardedAds = FindFirstObjectByType<RewardedAds>();
 
+        if (hanoiRewardedAds == null)
+            hanoiRewardedAds = FindFirstObjectByType<HanoiRewardedAds>();
+
         if (bannerAd == null)
             bannerAd = FindFirstObjectByType<BannerAd>();
 
         GameObject rewardedAdButtonObj = GameObject.FindGameObjectWithTag("RewardedButton");
-        if (rewardedAdButtonObj != null && rewardedAds != null)
+        if (rewardedAdButtonObj != null)
         {
             Button rewardedAdButton = rewardedAdButtonObj.GetComponent<Button>();
             if (rewardedAdButton != null)
-                rewardedAds.SetButton(rewardedAdButton);
+            {
+                if (hanoiRewardedAds != null)
+                {
+                    hanoiRewardedAds.SetButton(rewardedAdButton);
+                }
+                else if (rewardedAds != null)
+                {
+                    rewardedAds.SetButton(rewardedAdButton);
+                }
+            }
         }
 
         GameObject bannerButtonObj = GameObject.FindGameObjectWithTag("BannerButton");
@@ -141,10 +159,18 @@ public class AdManager : MonoBehaviour
             interstitialAd.LoadAd();
         }
 
-        if (!turnOffRewardedAds && rewardedAds != null)
+        if (!turnOffRewardedAds)
         {
-            Debug.Log("Loading rewarded ad on scene load...");
-            rewardedAds.LoadAd();
+            if (hanoiRewardedAds != null)
+            {
+                Debug.Log("Loading Hanoi rewarded ad on scene load...");
+                hanoiRewardedAds.LoadAd();
+            }
+            else if (rewardedAds != null)
+            {
+                Debug.Log("Loading rewarded ad on scene load...");
+                rewardedAds.LoadAd();
+            }
         }
 
         if (!turnOffBannerAd && bannerAd != null)
