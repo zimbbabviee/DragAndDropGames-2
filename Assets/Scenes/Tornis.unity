@@ -1103,7 +1103,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 119, y: 502}
+  m_AnchoredPosition: {x: 117, y: 457.33}
   m_SizeDelta: {x: 373.2858, y: 105.4514}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &929305512
@@ -2278,7 +2278,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1570865135
@@ -2459,7 +2459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _androidAdUnitId: Banner_Android
   _iOSAdUnitId: Banner_iOS
-  _bannerButton: {fileID: 0}
+  _bannerButton: {fileID: 721634648}
   isBannerVisible: 0
   _bannerPosition: 4
 --- !u!4 &1583724630

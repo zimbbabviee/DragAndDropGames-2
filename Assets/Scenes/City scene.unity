@@ -285,6 +285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _androidAdUnitId: Rewarded_Android
+  _iOSAdUnitId: Rewarded_iOS
   _rewardedAdButton: {fileID: 1790733988}
   flayingObjectManager: {fileID: 0}
 --- !u!4 &78036245
@@ -1402,8 +1403,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _androidAdUnitId: Banner_Android
+  _iOSAdUnitId: Banner_iOS
   _bannerButton: {fileID: 469567346}
-  isBannerVisible: 0
+  isBannerVisible: 1
   _bannerPosition: 4
 --- !u!4 &438203643
 Transform:
@@ -3780,6 +3782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _androidAdUnitId: Interstitial_Android
+  _iOSAdUnitId: Interstitial_iOS
   isReady: 0
   _interstitialAdButton: {fileID: 234943547}
 --- !u!114 &1104841428
@@ -3812,6 +3815,7 @@ MonoBehaviour:
   interstitialAd: {fileID: 1104841427}
   turnOffInterstitialAd: 0
   rewardedAds: {fileID: 78036244}
+  hanoiRewardedAds: {fileID: 0}
   turnOffRewardedAds: 0
   bannerAd: {fileID: 438203642}
   turnOffBannerAd: 0
