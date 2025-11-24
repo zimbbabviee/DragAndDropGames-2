@@ -38,18 +38,18 @@ public class AdManager : MonoBehaviour
 
     private void HandleAdsInitialized()
     {
-        if (!turnOffInterstitialAd)
+        if (!turnOffInterstitialAd && interstitialAd != null)
         {
             interstitialAd.OnInterstitialAdReady += HandleInterstitialReady;
             interstitialAd.LoadAd();
         }
 
-        if (!turnOffRewardedAds)
+        if (!turnOffRewardedAds && rewardedAds != null)
         {
             rewardedAds.LoadAd();
         }
 
-        if (!turnOffBannerAd)
+        if (!turnOffBannerAd && bannerAd != null)
         {
             bannerAd.LoadBanner();
         }
@@ -86,12 +86,14 @@ public class AdManager : MonoBehaviour
         if (interstitialAd == null)
             interstitialAd = FindFirstObjectByType<InterstitialAd>();
 
-        Button interstitialButton =
-            GameObject.FindGameObjectWithTag("interstitialAdButton").GetComponent<Button>();
-
-        if (interstitialAd != null && interstitialButton != null)
+        GameObject interstitialButtonObj = GameObject.FindGameObjectWithTag("interstitialAdButton");
+        if (interstitialButtonObj != null && interstitialAd != null)
         {
-            interstitialAd.SetButton(interstitialButton);
+            Button interstitialButton = interstitialButtonObj.GetComponent<Button>();
+            if (interstitialButton != null)
+            {
+                interstitialAd.SetButton(interstitialButton);
+            }
         }
 
 
@@ -101,17 +103,22 @@ public class AdManager : MonoBehaviour
         if (bannerAd == null)
             bannerAd = FindFirstObjectByType<BannerAd>();
 
-        Button rewardedAdButton =
-            GameObject.FindGameObjectWithTag("RewardedButton").GetComponent<Button>();
-
-        if (rewardedAds != null && rewardedAdButton != null)
-            rewardedAds.SetButton(rewardedAdButton);
-
-
-        Button bannerButton = GameObject.FindGameObjectWithTag("BannerButton").GetComponent<Button>();
-        if (bannerAd != null && bannerButton != null)
+        GameObject rewardedAdButtonObj = GameObject.FindGameObjectWithTag("RewardedButton");
+        if (rewardedAdButtonObj != null && rewardedAds != null)
         {
-            bannerAd.SetButton(bannerButton);
+            Button rewardedAdButton = rewardedAdButtonObj.GetComponent<Button>();
+            if (rewardedAdButton != null)
+                rewardedAds.SetButton(rewardedAdButton);
+        }
+
+        GameObject bannerButtonObj = GameObject.FindGameObjectWithTag("BannerButton");
+        if (bannerButtonObj != null && bannerAd != null)
+        {
+            Button bannerButton = bannerButtonObj.GetComponent<Button>();
+            if (bannerButton != null)
+            {
+                bannerAd.SetButton(bannerButton);
+            }
         }
 
         if (!firstSceneLoad)
@@ -122,7 +129,17 @@ public class AdManager : MonoBehaviour
         }
 
         Debug.Log("Scene loaded!");
-        HandleAdsInitialized();
+
+        if (!turnOffInterstitialAd && interstitialAd != null && interstitialAd.isReady)
+        {
+            Debug.Log("Showing interstitial ad on scene transition!");
+            interstitialAd.ShowAd();
+        }
+        else if (!turnOffInterstitialAd && interstitialAd != null)
+        {
+            Debug.Log("Interstitial ad not ready, loading...");
+            interstitialAd.LoadAd();
+        }
 
     }
 }

@@ -20,7 +20,7 @@ public class InterstitialAd : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSho
 
     private void Update()
     {
-        if (AdManager.Instance != null && AdManager.Instance.interstitialAd != null)
+        if (AdManager.Instance != null && AdManager.Instance.interstitialAd != null && _interstitialAdButton != null)
         {
             _interstitialAdButton.interactable = isReady;
         }
