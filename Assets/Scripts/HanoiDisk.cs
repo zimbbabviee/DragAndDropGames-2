@@ -1,5 +1,7 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class HanoiDisk : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
@@ -8,17 +10,28 @@ public class HanoiDisk : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
     private Canvas canvas;
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
+    private Image diskImage;
+    private Color originalColor;
     private Vector2 originalPosition;
     private HanoiTower currentTower;
+    private HanoiTower sourceTower;
     private Camera uiCamera;
-    private Vector3 dragOffsetWorld;
+    private Vector2 dragOffset;
     private bool isDraggingAllowed = false;
+    private Transform originalParent;
+    private int originalSiblingIndex;
 
     void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
         canvas = GetComponentInParent<Canvas>();
         canvasGroup = GetComponent<CanvasGroup>();
+        diskImage = GetComponent<Image>();
+
+        if (diskImage != null)
+        {
+            originalColor = diskImage.color;
+        }
 
         if (canvasGroup == null)
         {
@@ -66,22 +79,39 @@ public class HanoiDisk : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
 
         if (currentTower != null && !currentTower.IsTopDisk(this))
         {
+            Debug.Log("Cannot drag: This disk is not on top!");
             return;
         }
 
         isDraggingAllowed = true;
+        sourceTower = currentTower;
         originalPosition = rectTransform.anchoredPosition;
-        canvasGroup.alpha = 0.6f;
+        originalParent = transform.parent;
+        originalSiblingIndex = transform.GetSiblingIndex();
+
+        canvasGroup.alpha = 0.9f;
         canvasGroup.blocksRaycasts = false;
 
-        Vector3 pointerWorld;
-        if (ScreenPointToWorld(eventData.position, out pointerWorld))
+        rectTransform.localScale = Vector3.one * 1.1f;
+
+        if (diskImage != null)
         {
-            dragOffsetWorld = transform.position - pointerWorld;
+            diskImage.color = new Color(originalColor.r * 1.2f, originalColor.g * 1.2f, originalColor.b * 1.2f, originalColor.a);
         }
-        else
+
+        Vector3 worldPosition = rectTransform.position;
+        transform.SetParent(canvas.transform);
+        transform.SetAsLastSibling();
+        rectTransform.position = worldPosition;
+
+        Vector2 localPointerPosition;
+        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            canvas.transform as RectTransform,
+            eventData.position,
+            uiCamera,
+            out localPointerPosition))
         {
-            dragOffsetWorld = Vector3.zero;
+            dragOffset = rectTransform.localPosition - (Vector3)localPointerPosition;
         }
     }
 
@@ -90,10 +120,14 @@ public class HanoiDisk : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
         if (!isDraggingAllowed)
             return;
 
-        Vector3 pointerWorld;
-        if (ScreenPointToWorld(eventData.position, out pointerWorld))
+        Vector2 localPointerPosition;
+        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            canvas.transform as RectTransform,
+            eventData.position,
+            uiCamera,
+            out localPointerPosition))
         {
-            transform.position = pointerWorld + dragOffsetWorld;
+            rectTransform.localPosition = localPointerPosition + dragOffset;
         }
     }
 
@@ -106,6 +140,12 @@ public class HanoiDisk : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
 
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
+        rectTransform.localScale = Vector3.one;
+
+        if (diskImage != null)
+        {
+            diskImage.color = originalColor;
+        }
 
         HanoiTower targetTower = null;
 
@@ -118,18 +158,19 @@ public class HanoiDisk : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
             }
         }
 
+        bool validPlacement = false;
+
         if (targetTower != null && targetTower.CanPlaceDisk(this))
         {
-            HanoiTower previousTower = currentTower;
-
             if (currentTower != null)
             {
                 currentTower.RemoveDisk(this);
             }
 
             targetTower.AddDisk(this);
+            validPlacement = true;
 
-            if (previousTower != targetTower)
+            if (sourceTower != targetTower)
             {
                 HanoiGameManager gameManager = Object.FindFirstObjectByType<HanoiGameManager>();
                 if (gameManager != null)
@@ -140,9 +181,47 @@ public class HanoiDisk : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
         }
         else
         {
-            rectTransform.anchoredPosition = originalPosition;
+            Debug.Log("Invalid placement! Disk will fall down.");
+            StartCoroutine(FallAndReturn());
         }
 
         isDraggingAllowed = false;
+    }
+
+    IEnumerator FallAndReturn()
+    {
+        float fallDuration = 0.5f;
+        float elapsed = 0f;
+        Vector3 startPos = rectTransform.position;
+
+        // Calculate fall target (bottom of screen)
+        Screen_Boundaries screenBounds = FindFirstObjectByType<Screen_Boundaries>();
+        float bottomY = screenBounds != null ? screenBounds.worldBounds.yMin - 200 : -1000;
+        Vector3 fallTarget = new Vector3(startPos.x, bottomY, startPos.z);
+
+        // Fall down
+        while (elapsed < fallDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / fallDuration;
+            // Use quadratic easing for more realistic fall
+            float easedT = t * t;
+            rectTransform.position = Vector3.Lerp(startPos, fallTarget, easedT);
+
+            yield return null;
+        }
+
+        // Return to original tower
+        if (sourceTower != null)
+        {
+            transform.SetParent(originalParent);
+            transform.SetSiblingIndex(originalSiblingIndex);
+            sourceTower.UpdateDiskPositionsPublic();
+        }
+        else
+        {
+            transform.SetParent(originalParent);
+            rectTransform.anchoredPosition = originalPosition;
+        }
     }
 }

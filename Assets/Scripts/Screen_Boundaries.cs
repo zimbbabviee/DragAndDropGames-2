@@ -12,6 +12,7 @@ public class Screen_Boundaries : MonoBehaviour
     public Rect worldBounds = new Rect(-960, -540, 1920, 1080);
     [Range(0f, 0.5f)]
     public float padding = 0.02f;
+    public bool autoAdjustCameraSize = true;
 
     public Camera targetCamera;
 
@@ -30,7 +31,32 @@ public class Screen_Boundaries : MonoBehaviour
             targetCamera = Camera.main;
         }
 
+        if (autoAdjustCameraSize && targetCamera != null && targetCamera.orthographic)
+        {
+            AdjustCameraToFitBounds();
+        }
+
         RecalculateBounds();
+    }
+
+    void AdjustCameraToFitBounds()
+    {
+        float worldWidth = worldBounds.width;
+        float worldHeight = worldBounds.height;
+        float screenAspect = targetCamera.aspect;
+        float worldAspect = worldWidth / worldHeight;
+
+        float requiredOrthoSize;
+        if (screenAspect < worldAspect)
+        {
+            requiredOrthoSize = (worldWidth / (2f * screenAspect)) * (1f + padding);
+        }
+        else
+        {
+            requiredOrthoSize = (worldHeight / 2f) * (1f + padding);
+        }
+
+        targetCamera.orthographicSize = requiredOrthoSize;
     }
 
     void Update()

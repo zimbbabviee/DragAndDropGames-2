@@ -10,6 +10,7 @@ public class BannerAd : MonoBehaviour
 
     [SerializeField] Button _bannerButton;
     public bool isBannerVisible = false;
+    private bool isLoading = false;
 
     [SerializeField] BannerPosition _bannerPosition = BannerPosition.BOTTOM_CENTER;
 
@@ -33,6 +34,13 @@ public class BannerAd : MonoBehaviour
             return;
         }
 
+        if (isLoading)
+        {
+            Debug.Log("Banner is already loading, skipping...");
+            return;
+        }
+
+        isLoading = true;
         Debug.Log("Loading Banner ad!");
         BannerLoadOptions options = new BannerLoadOptions
         {
@@ -46,13 +54,17 @@ public class BannerAd : MonoBehaviour
     void OnBannerLoaded()
     {
         Debug.Log("Banner ad loaded!");
-        _bannerButton.interactable = true;
+        isLoading = false;
+        if (_bannerButton != null)
+        {
+            _bannerButton.interactable = true;
+        }
     }
 
     void OnBannerError(string message)
     {
         Debug.LogWarning("Banner Error: " + message);
-        LoadBanner();
+        isLoading = false;
     }
 
     public void ShowBannerAd()

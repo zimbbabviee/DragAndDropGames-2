@@ -99,6 +99,11 @@ public class AdManager : MonoBehaviour
             if (interstitialButton != null)
             {
                 interstitialAd.SetButton(interstitialButton);
+
+                if (scene.name == "City scene" || scene.name == "Tornis")
+                {
+                    interstitialButton.gameObject.SetActive(false);
+                }
             }
         }
 

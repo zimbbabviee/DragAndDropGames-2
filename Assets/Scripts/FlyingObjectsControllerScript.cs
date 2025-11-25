@@ -50,15 +50,19 @@ public class FlyingObjectsControllerScript : MonoBehaviour
 
         float waveOffset = Mathf.Sin(Time.time * waveFrequency) * waveAmplitude;
         rectTransform.anchoredPosition += new Vector2(-speed * Time.deltaTime, waveOffset * Time.deltaTime);
+
+        float leftBoundary = scrreenBoundriesScript.worldBounds.xMin - 100;
+        float rightBoundary = scrreenBoundriesScript.worldBounds.xMax + 100;
+
         // <-
-        if (speed > 0 && transform.position.x < (scrreenBoundriesScript.minX + 80) && !isFadingOut)
+        if (speed > 0 && transform.position.x < leftBoundary && !isFadingOut)
         {
             StartCoroutine(FadeOutAndDestroy());
             isFadingOut = true;
         }
 
         // ->
-        if (speed < 0 && transform.position.x > (scrreenBoundriesScript.maxX - 80) && !isFadingOut)
+        if (speed < 0 && transform.position.x > rightBoundary && !isFadingOut)
         {
             StartCoroutine(FadeOutAndDestroy());
             isFadingOut = true;

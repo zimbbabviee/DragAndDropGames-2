@@ -90,6 +90,11 @@ public class HanoiTower : MonoBehaviour, IDropHandler
         }
     }
 
+    public void UpdateDiskPositionsPublic()
+    {
+        UpdateDiskPositions();
+    }
+
     public void OnDrop(PointerEventData eventData)
     {
     }
