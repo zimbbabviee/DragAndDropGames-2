@@ -59,6 +59,12 @@ public class BannerAd : MonoBehaviour
         {
             _bannerButton.interactable = true;
         }
+
+        if (!isBannerVisible)
+        {
+            Debug.Log("Auto-showing banner after load");
+            ShowBannerAd();
+        }
     }
 
     void OnBannerError(string message)
@@ -71,20 +77,18 @@ public class BannerAd : MonoBehaviour
     {
         if (isBannerVisible)
         {
-            HideBannerAd();
-
+            Debug.Log("Banner is already visible");
+            return;
         }
-        else
+
+        BannerOptions options = new BannerOptions
         {
-            BannerOptions options = new BannerOptions
-            {
-                clickCallback = OnBannerClicked,
-                hideCallback = OnBannerHidden,
-                showCallback = OnBannerShown
-            };
+            clickCallback = OnBannerClicked,
+            hideCallback = OnBannerHidden,
+            showCallback = OnBannerShown
+        };
 
-            Advertisement.Banner.Show(_adUnitId, options);
-        }
+        Advertisement.Banner.Show(_adUnitId, options);
     }
 
     public void HideBannerAd()
