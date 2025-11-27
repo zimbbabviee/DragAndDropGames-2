@@ -551,6 +551,7 @@ MonoBehaviour:
     width: 1920
     height: 1080
   padding: 0.02
+  autoAdjustCameraSize: 1
   targetCamera: {fileID: 0}
 --- !u!114 &133053280
 MonoBehaviour:
@@ -1837,7 +1838,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &469567345
 RectTransform:
   m_ObjectHideFlags: 0
